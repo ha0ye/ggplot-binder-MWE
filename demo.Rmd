@@ -1,0 +1,26 @@
+---
+title: "demo"
+author: "Hao Ye"
+date: "August 29, 2018"
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+
+p1 <- ggplot(diamonds, 
+       aes(x = carat, y = price, color = color)) + 
+    geom_point() + 
+    facet_wrap(~cut) + 
+    scale_color_brewer("YlGnBu") + 
+    theme_bw()
+
+p1
+```
+
